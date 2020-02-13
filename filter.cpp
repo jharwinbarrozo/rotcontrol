@@ -1,5 +1,4 @@
-//Provides low pass filters for the sensors and motors 
-
+//Provides filters for gyro and motors
 #include "fil.h"
 
 //Public methods
