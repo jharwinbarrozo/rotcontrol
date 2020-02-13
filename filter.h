@@ -1,4 +1,3 @@
-//Provides low pass filters for the sensors and motors 
 
 #ifndef FIL_H
 #define FIL_H
