@@ -1,6 +1,3 @@
-//Provides calibration objects for each axis
-//The offset and scaling factors are accumulated by sampling data
-
 #include "cal.h"
 
 //Public methods
