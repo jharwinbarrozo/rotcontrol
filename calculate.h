@@ -1,6 +1,3 @@
-//Provides calibration objects for each axis
-//The offset and scaling factors are accumulated by sampling data
-
 #ifndef CAL_H
 #define CAL_H
 
