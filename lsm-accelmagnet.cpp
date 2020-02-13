@@ -1,10 +1,3 @@
-//Reference: ST Datasheet: LSM303 Ultra-compact high-performance eCompass module: 3D accelerometer and 3D magnetometer
-//There are two types of supported sensor boards containing the LSM303D or LSL303DHLC integrated circuits.
-//Because the flat side of the sensor board is attached on the top of the antenna boom, with the long side of the sensor board parallel to the boom,
-//the sensor axes (X', Y' and Z') are not the same as the reference axes (X, Y and Z) used in the software and our original article.
-//X = -Y', Y = X' and Z = Z'. Also, the gravity field vector G is the opposite of the device acceleration vector A.
-//Therefore the following transformations apply: MX = -MY', MY = MX', MZ = MZ', GX = AY', GY = -AX', GZ = -AZ'.
-//Supports LSM303D or LSM303DLHC 3D Accelerometer/Magnetometer
 
 #include "lsm.h"
 
