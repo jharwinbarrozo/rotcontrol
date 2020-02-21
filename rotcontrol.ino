@@ -388,7 +388,7 @@ void setup() {
   //Reset the rotator and load configuration from EEPROM
   reset(true);
   //Initialize the serial port
-  SerialPort.begin(19200);
+  SerialPort.begin(9600);
   //Initialize the sensor
   lsm.begin();
 }
