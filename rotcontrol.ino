@@ -10,7 +10,7 @@ const int MotorType = FWDREV;     //Please uncomment this line for the L298N DC 
 const int SensorType = LSM303DLHC;  //Please uncomment this line to use the LSM303DLHC sensor.
 //#define SerialPort Serial           //Please uncomment this line to use the USB port.
 #define SerialPort Serial1        //Please uncomment this line to use the TTL port.
-#define WINDUP_LIMIT 450            //Sets the total number of degrees azimuth rotation in any direction before resetting to zero
+#define WINDUP_LIMIT 360            //Sets the total number of degrees azimuth rotation in any direction before resetting to zero
 //Motor pins - Don't change
 const int azFwdPin = 5;
 const int azRevPin = 6;
@@ -179,7 +179,7 @@ void getWindup(bool *windup,  float *azWindup, float *azOffset, float *azLast, f
   //Compute the azimuth wind-up angle, i.e. the absolute number of degrees from the home position
   *azWindup = az + *azOffset;
 
-  //Detect a windup condition where the antenna has rotated more than 450 degrees from home
+  //Detect a windup condition where the antenna has rotated more than 360 degrees from home
   if (abs(*azWindup) > WINDUP_LIMIT) *windup = true;    //Set the windup condition - it is reset later when the antenna nears home
 
   //Perform the anti-windup procedure at the end of each pass - This is overkill unless you absolutely don't want anti-windup during a pass
