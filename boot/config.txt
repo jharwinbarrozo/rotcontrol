@@ -70,7 +70,7 @@ gpu_freq=700
 #hdmi_drive=2
 
 hdmi_edid_file=1
-hdmi_edid_filename:0=HWP_HPLA2006.dat
+hdmi_edid_filename:0=HWP-HP_LA2006.dat
 hdmi_edid_filename:1=NEX-96VD.dat
 
 #[EDID=XXX-AAA]
@@ -78,7 +78,7 @@ hdmi_edid_filename:1=NEX-96VD.dat
 #hdmi_mode=16
 #hdmi_drive=2
 
-[EDID=HWP_HPLA2006]
+[EDID=HWP-HP_LA2006]
 hdmi_group=2
 hdmi_mode=83
 hdmi_drive=1
