@@ -42,9 +42,6 @@ config_hdmi_boost=7
 # uncomment for composite PAL 
 #sdtv_mode=2
 
-#uncomment to overclock the arm. 700 MHz is the default. 
-#arm_freq=800
-
 # Uncomment some or all of these to enable the optional hardware interfaces
 #dtparam=i2c_arm=on
 #dtparam=i2s=on
@@ -52,7 +49,8 @@ config_hdmi_boost=7
 
 # Uncomment this to enable infrared communication.
 #dtoverlay=gpio-ir,gpio_pin=17
-#dtoverlay=gpio-ir-tx,gpio_pin=18 
+#dtoverlay=gpio-ir-tx,gpio_pin=18
+dtoverlay=i2c-rtc,ds3231
 
 # Additional overlays and parameters are documented 
 # /boot/overlays/README Enable audio (loads snd_bcm2835)
@@ -61,7 +59,10 @@ dtparam=audio=on
 [pi4]
 # Enable DRM VC4 V3D driver on top of the dispmanx display stack
 dtoverlay=vc4-fkms-v3d
-max_framebuffers=2 
+max_framebuffers=2
+arm_freq=2000
+over_voltage=6
+gpu_freq=700
 
 #[EDID=SAM-SyncMaster]
 #hdmi_group=1
@@ -69,20 +70,24 @@ max_framebuffers=2
 #hdmi_drive=2
 
 hdmi_edid_file=1
-hdmi_edid_filename:0=XXX-AAA.dat
+hdmi_edid_filename:0=HWP_HPLA2006.dat
 hdmi_edid_filename:1=NEX-96VD.dat
 
-[EDID=XXX-AAA]
-hdmi_group=1
-hdmi_mode=16
-hdmi_drive=2
+#[EDID=XXX-AAA]
+#hdmi_group=1
+#hdmi_mode=16
+#hdmi_drive=2
+
+[EDID=HWP_HPLA2006]
+hdmi_group=2
+hdmi_mode=83
+hdmi_drive=1
 
 [EDID=NEX-96VD]
 hdmi_group=2
 hdmi_mode=39
 hdmi_drive=1
 
-#worked previously 39
 #drive=1 means DVI, 2 is hdmi
 #group=0 means auto detect, 1 is CEA, 2, DMT
 #cea is mostly tv with hdmi
